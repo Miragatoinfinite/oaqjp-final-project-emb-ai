@@ -12,6 +12,10 @@ def emotion_detection():
 
     response = emotion_detector(text_to_analyze)
 
+    # A blank entry makes the function return None for every value
+    if response["dominant_emotion"] is None:
+        return "Invalid text! Please try again!"
+
     anger = response["anger"]
     disgust = response["disgust"]
     fear = response["fear"]
